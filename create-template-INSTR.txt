@@ -1,0 +1,15 @@
+
+
+To use the template script:
+
+Save it as create-service.sh
+Make it executable: chmod +x create-service.sh
+Run it with your service name: ./create-service.sh video-service
+
+
+The script will create a new directory with all the necessary files for a new microservice. You'll just need to:
+
+Update the content type in the Resource class to match your service (e.g., "video/mp4")
+
+Add your media files to the appropriate resources directory
+Build and run with Maven or Docker

@@ -1,0 +1,24 @@
+version: '3.8'
+
+# audio-service/docker-compose.yml
+# Define default environment variables that will apply to all services
+x-common-variables: &common-variables
+  SERVER_PORT: ${SERVER_PORT:-8085}
+  LOG_LEVEL: ${LOG_LEVEL:-INFO}
+
+services:
+  audio-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - SERVER_PORT=${SERVER_PORT:-8085}
+    ports:
+      - "${SERVER_PORT:-8085}:${SERVER_PORT:-8085}"
+    environment:
+      <<: *common-variables
+      SERVICE_NAME: audio-service
+    volumes:
+      # Mount for easy resource updates without rebuilding
+      - ./src/main/resources:/app/resources
+    restart: unless-stopped

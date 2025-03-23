@@ -1,0 +1,5 @@
+com/xeon2035/video/RestApplication.class
+com/xeon2035/video/utils/LogUtil.class
+com/xeon2035/video/utils/ClearTerminal.class
+com/xeon2035/video/VideoServiceServer.class
+com/xeon2035/video/VideoResource.class
